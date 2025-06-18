@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Futebol</title>
+    <style>
+        body {
+            background-image: url('img/2021-02-12-tamanhos-oficiais-de-campo-society.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            gap: 30px;
+        }
+
+        .linha {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: transparent;
+            width: 350px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Frentes com cores */
+        .card1 .card-front { background-color: #e74c3c; color: white; }
+        .card2 .card-front { background-color: #3498db; color: white; }
+        .card3 .card-front { background-color: #f1c40f; color: black; }
+        .card4 .card-front { background-color: #9b59b6; color: white; }
+
+        /* Verso com verde */
+        .card-back {
+            background-color: #27ae60;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="linha">
+        <div class="card card1" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Qual seleção venceu mais Copas do Mundo?</h2>
+                </div>
+                <div class="card-back">
+                    <h2>Brasil (5 títulos)</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card2" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Quem é conhecido como "Rei do Futebol"?</h2>
+                </div>
+                <div class="card-back">
+                    <h2>Pelé</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card3" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Em que ano o Brasil ganhou sua primeira Copa?</h2>
+                </div>
+                <div class="card-back">
+                    <h2>1958</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="linha">
+        <div class="card card4" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Qual jogador ganhou 8 bolas de ouro?</h2>
+                </div>
+                <div class="card-back">
+                    <h2>Messi</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
